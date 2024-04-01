@@ -13,8 +13,8 @@ function App(): React.JSX.Element {
           <Text preset="headingLarge" italic>
             Noel
           </Text>
-          <Button title="teste" preset="Outline" />
-          <Button title="teste" />
+
+          <Button title="teste" disable />
         </View>
       </SafeAreaView>
     </ThemeProvider>
