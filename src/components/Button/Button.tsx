@@ -11,17 +11,17 @@ interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;
   loading?: boolean;
   preset?: ButtonPreset;
-  disable?: boolean;
+  disabled?: boolean;
 }
 
 export function Button({
   title,
   loading,
-  disable,
+  disabled,
   preset = 'Primary',
   ...touchableOpacityBoxProps
 }: ButtonProps) {
-  const buttonPreset = buttonPresets[preset][disable ? 'disable' : 'default'];
+  const buttonPreset = buttonPresets[preset][disabled ? 'disabled' : 'default'];
 
   return (
     <TouchableOpacityBox
@@ -30,13 +30,13 @@ export function Button({
       alignItems="center"
       justifyContent="center"
       borderRadius="s16"
-      disabled={disable || loading}
+      disabled={disabled || loading}
       {...buttonPreset.container}
       {...touchableOpacityBoxProps}>
       {loading ? (
-        <ActivityIndicator color={buttonPreset.content} />
+        <ActivityIndicator color={buttonPreset.content.color} />
       ) : (
-        <Text preset="headingMedium" bold color={buttonPreset.content}>
+        <Text preset="paragraphMedium" bold color={buttonPreset.content.color}>
           {title}
         </Text>
       )}

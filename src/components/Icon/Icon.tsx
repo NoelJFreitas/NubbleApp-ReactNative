@@ -75,13 +75,13 @@ export interface IconBase {
 interface Props {
   name: IconName;
   size?: number;
-  color: ThemeColors;
+  color?: ThemeColors;
 }
 
 type IconType = typeof iconRegistry;
 type IconName = keyof IconType;
 
-export function Icon({name, size, color = 'backgroundContrast'}: Props) {
+export function Icon({name, size = 20, color = 'backgroundContrast'}: Props) {
   const {colors} = useAppTheme();
   const SVGIcon = iconRegistry[name];
 

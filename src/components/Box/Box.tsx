@@ -14,6 +14,7 @@ import {
 import {Theme} from '../../theme/theme';
 
 export const Box = createBox<Theme>();
+export type BoxProps = React.ComponentProps<typeof Box>;
 
 //mesclando props dos styles do restyle
 export type TouchableOpacityBoxProps = BackgroundColorProps<Theme> &
