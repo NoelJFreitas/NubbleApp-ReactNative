@@ -32,6 +32,7 @@ import {ProfileFillIcon} from '../../assets/icons/ProfileFillIcon';
 import {SearchIcon} from '../../assets/icons/SearchIcon';
 import {SettingsIcon} from '../../assets/icons/SettingsIcon';
 import {TrashIcon} from '../../assets/icons/TrashIcon';
+import {Pressable} from 'react-native';
 
 const iconRegistry = {
   arrowLeft: ArrowLeftIcon,
@@ -76,14 +77,28 @@ interface Props {
   name: IconName;
   size?: number;
   color?: ThemeColors;
+  onPress?: () => void;
 }
 
 type IconType = typeof iconRegistry;
 type IconName = keyof IconType;
 
-export function Icon({name, size = 20, color = 'backgroundContrast'}: Props) {
+export function Icon({
+  name,
+  size = 20,
+  onPress,
+  color = 'backgroundContrast',
+}: Props) {
   const {colors} = useAppTheme();
   const SVGIcon = iconRegistry[name];
+
+  if (onPress) {
+    return (
+      <Pressable hitSlop={10} onPress={onPress}>
+        <SVGIcon color={colors[color]} size={size} />
+      </Pressable>
+    );
+  }
 
   return <SVGIcon color={colors[color]} size={size} />;
 }

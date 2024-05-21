@@ -8,7 +8,7 @@ import {Theme} from '../../theme/theme';
 const SRText = createText<Theme>();
 type SRTExtProps = React.ComponentProps<typeof SRText>;
 
-interface TextProps extends SRTExtProps {
+export interface TextProps extends SRTExtProps {
   preset?: TextVariants;
   bold?: boolean;
   italic?: boolean;
