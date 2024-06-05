@@ -11,7 +11,10 @@ type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
 
 export function LoginScreen({navigation}: ScreenProps) {
   function navigateToSignUpScreen() {
-    navigation.navigate('LoginScreen');
+    navigation.navigate('SignUpScreen');
+  }
+  function navigateToForgotPasswordScreen() {
+    navigation.navigate('ForgotPasswordScreen');
   }
 
   return (
@@ -24,7 +27,6 @@ export function LoginScreen({navigation}: ScreenProps) {
       </Text>
 
       <TextInput
-        errorMessage="mensagem de error"
         label="Email"
         placeholder="Digite seu email"
         boxProps={{mb: 's20'}}
@@ -37,7 +39,11 @@ export function LoginScreen({navigation}: ScreenProps) {
         boxProps={{mb: 's10'}}
       />
 
-      <Text preset="paragraphSmall" bold color="primary">
+      <Text
+        onPress={navigateToForgotPasswordScreen}
+        preset="paragraphSmall"
+        bold
+        color="primary">
         Esqueci minha senha
       </Text>
 
