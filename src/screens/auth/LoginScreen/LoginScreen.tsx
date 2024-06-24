@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
 
 import {
@@ -11,7 +12,6 @@ import {
 } from '@components';
 
 import {LoginSchema, loginSchema} from './loginSchema';
-import {zodResolver} from '@hookform/resolvers/zod';
 
 export function LoginScreen() {
   const {control, formState, handleSubmit} = useForm<LoginSchema>({
