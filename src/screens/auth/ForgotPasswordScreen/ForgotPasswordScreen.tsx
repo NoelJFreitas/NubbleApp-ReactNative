@@ -1,19 +1,10 @@
 import React from 'react';
 
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {Button, Screen, Text, TextInput} from '@components';
+import {useResetNavigationSuccess} from '@hooks';
+import {AuthScreenProps} from '@routes';
 
-import {Button} from '../../../components/Button/Button';
-import {Screen} from '../../../components/Screen/Screen';
-import {Text} from '../../../components/Text/Text';
-import {TextInput} from '../../../components/TextInput/TextInput';
-import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
-import {RootStackParamList} from '../../../routes/router';
-
-type ScreenProps = NativeStackScreenProps<
-  RootStackParamList,
-  'ForgotPasswordScreen'
->;
-export function ForgotPasswordScreen({}: ScreenProps) {
+export function ForgotPasswordScreen({}: AuthScreenProps<'ForgotPasswordScreen'>) {
   const {reset} = useResetNavigationSuccess();
   function submitForm() {
     reset({

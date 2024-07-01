@@ -11,6 +11,7 @@ import {
   Text,
 } from '@components';
 import {useResetNavigationSuccess} from '@hooks';
+import {AuthScreenProps} from '@routes';
 
 import {signUpSchema, SignUpSchema} from './signUpSchema';
 
@@ -22,7 +23,7 @@ const defaultValues: SignUpSchema = {
   password: '',
 };
 
-export function SignUpScreen() {
+export function SignUpScreen({}: AuthScreenProps<'SignUpScreen'>) {
   const {reset} = useResetNavigationSuccess();
   const {control, formState, handleSubmit} = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
