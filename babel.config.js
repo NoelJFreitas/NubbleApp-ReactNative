@@ -7,11 +7,11 @@ module.exports = {
         root: '.',
         alias: {
           '@components': './src/components',
+          '@domain': './src/domain',
           '@hooks': './src/hooks',
           '@routes': './src/routes',
           '@screens': './src/screens',
           '@theme': './src/theme',
-          '@domain': './src/domain',
           '@brand': './src/brand',
           '@api': './src/api',
           '@types': './src/types',
