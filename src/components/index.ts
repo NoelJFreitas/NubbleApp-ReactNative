@@ -7,4 +7,5 @@ export * from './Box/Box';
 export * from './PasswordInput/PasswordInput';
 export * from './Button/Button';
 export * from './ActivityIndicator/ActivityIndicator';
+export * from './PostItem/PostItem';
 export * from './Icon/Icon';
